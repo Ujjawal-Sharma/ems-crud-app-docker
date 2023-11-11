@@ -1,4 +1,4 @@
-# Project Name
+# Employee CRUD APIs
 
 This project is set up using Docker Compose to manage its containers. Below are instructions on how to run and manage the containers using Docker Compose.
 
