@@ -1,0 +1,18 @@
+services:
+        mysql:
+                image: mysql:5.7
+                environment:
+                              MYSQL_ROOT_PASSWORD: root_password
+                              MYSQL_DATABASE: test_db
+                ports:
+                        - "3306:3306"
+                volumes:
+                        - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+        php_app:
+                image: ujjawalsharmaexotel/ems-crud-app:latest
+                build:
+                        context: '.'
+                ports:
+                        - "8080:80"
+                depends_on:
+                        - mysql
